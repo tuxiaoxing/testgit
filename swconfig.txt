@@ -1,0 +1,53 @@
+
+#enalbe IM prot-12345, not impact on debug log
+0x3A0001=1
+
+#enable log prints from FCT
+#ERadCcs_AaSysLogInputLevel, /**< Prints stored to RAM (postmortem): 0 = disable 1 = debug 2 = info 3 = warning 4 = error 5 = vip 6 = disable */
+#0x1003F=1
+
+#ERadCcs_AaSysLogOutputLevel, /**< Prints forwarded to output devices: 0 = disable 1 = debug 2 = info 3 = warning 4 = error 5 = vip 6 = disable */
+#0x10040=1
+
+#ERadCcs_AaSysLogOutputMode, /**< Output mode which devices prints are forwarded: 0 = none 1 = all 2 = udp 3 = sic 4 = standard output 5 = local 6 = remote 7 = not valid */ 
+0x10041=5
+
+#enable UDP logging
+0x1A0020=1
+
+##--------------------------------------------------------
+## Debug Logging UEC
+##--------------------------------------------------------
+## TUecRadDebugLogEnabledGlobal
+#0x00130020 = 1
+# 
+## TUecRadDebugLogEnabledUec
+#0x00130021 = 1
+# 
+##TUecRadDebugLogEnabledCommon
+#0x0013001E = 1
+# 
+##TUecRadDebugLogEnabledCommonCodec
+#0x0013001F = 1
+
+#Disable Reset after Fatal happens:
+147=1
+15=9
+212=0
+0x10097=1
+
+#Recovery resets can be disabled by the flags:
+0x500001=0 # -> n is a number of allowed bts recovery resets
+0x500002=0 # -> m is a number of allowed fsp recovery resets
+
+#0x20041=1
+#0x20020=1
+#0x10028=1
+#0x1002A=1
+#0x1005A=1
+#0x1002B=0x137C
+
+0x210017=1
+
+#Disable PDCO HFN Recovery
+#0xD000C=0
